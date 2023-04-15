@@ -6,8 +6,13 @@ const PORT = 4000;
 
 app.use(cors());
 
+
 app.listen(PORT, () => {
 	console.log(`Server Works !!! At port ${PORT}`);
+});
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/stuff/index.html");
 });
 
 app.get('/downloadmp3', async (req, res, next) => {
